@@ -2,9 +2,14 @@
 const platform = require('../lib/platform')
 
 describe('Platform', () => {
-  it('Should parse mac', () => {
-    const result = platform('hyper-2.1.1-mac.zip')
-    expect(result).toBe('darwin')
+  it('Should parse Mac ARM dmg', () => {
+    const result = platform('AnnotAid-MacOS-ARM-v1.0.0-setup.dmg')
+    expect(result).toBe('dmg-arm')
+  })
+
+  it('Should parse Mac Intel', () => {
+    const result = platform('AnnotAid-MacOS-Intel-v1.0.0-setup.dmg')
+    expect(result).toBe('dmg')
   })
 
   it('Should parse other platforms', () => {
